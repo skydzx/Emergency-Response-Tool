@@ -1,0 +1,260 @@
+{
+    "webshell": [
+        {
+            "name": "中国菜刀一句话PHP",
+            "type": "php",
+            "pattern": "eval\\(\\$_POST\\['[^']+'\\]\\);",
+            "description": "中国菜刀一句话木马",
+            "severity": "high",
+            "tags": ["菜刀", "一句话", "eval"]
+        },
+        {
+            "name": "中国菜刀一句话ASP",
+            "type": "asp",
+            "pattern": "execute\\(\\$_POST\\['[^']+'\\]\\)",
+            "description": "中国菜刀ASP一句话木马",
+            "severity": "high",
+            "tags": ["菜刀", "一句话", "execute"]
+        },
+        {
+            "name": "冰蝎Java",
+            "type": "jsp",
+            "pattern": "Class\\.forName\\(\"java\\.lang\\.Runtime\"\\)",
+            "description": "冰蝎JSP WebShell",
+            "severity": "high",
+            "tags": ["冰蝎", "jsp", "Runtime"]
+        },
+        {
+            "name": "哥斯拉Java",
+            "type": "jsp",
+            "pattern": "getRuntime\\(\\)\\.exec\\(",
+            "description": "哥斯拉JSP WebShell",
+            "severity": "high",
+            "tags": ["哥斯拉", "jsp", "exec"]
+        },
+        {
+            "name": "蚁剑PHP",
+            "type": "php",
+            "pattern": "\\$_[A-Z]+\\[.+\\]\\(\\);.*base64_decode",
+            "description": "蚁剑PHP WebShell",
+            "severity": "high",
+            "tags": ["蚁剑", "base64", "eval"]
+        },
+        {
+            "name": "JSPSPY",
+            "type": "jsp",
+            "pattern": "JSPSPY",
+            "description": "JSPSPY WebShell",
+            "severity": "high",
+            "tags": ["JSPSPY", "jsp"]
+        },
+        {
+            "name": "MSF恶意脚本",
+            "type": "php",
+            "pattern": "msf_php_shell",
+            "description": "Metasploit PHP WebShell",
+            "severity": "high",
+            "tags": ["MSF", "Metasploit"]
+        },
+        {
+            "name": "WebShell通用特征",
+            "type": "php",
+            "pattern": "assert\\(\\s*\\$\\{",
+            "description": "可变变量assert执行",
+            "severity": "medium",
+            "tags": ["assert", "可变变量"]
+        },
+        {
+            "name": "SQL注入SHELL",
+            "type": "php",
+            "pattern": "select.*into.*outfile",
+            "description": "SQL导出shell",
+            "severity": "high",
+            "tags": ["SQL", "outfile"]
+        },
+        {
+            "name": "Struts2漏洞SHELL",
+            "type": "jsp",
+            "pattern": "#\\[\\$\\{.*\\}\\]",
+            "description": "Struts2 OGNL表达式",
+            "severity": "high",
+            "tags": ["Struts2", "OGNL"]
+        }
+    ],
+    "forward_tools": [
+        {
+            "name": "EarthWorm",
+            "pattern": "ew -s",
+            "description": "EarthWorm端口转发工具",
+            "severity": "medium",
+            "tags": ["端口转发", "EW"]
+        },
+        {
+            "name": "FRP",
+            "pattern": "[.]frp",
+            "description": "FRP内网穿透工具",
+            "severity": "medium",
+            "tags": ["内网穿透", "FRP"]
+        },
+        {
+            "name": "Ngrok",
+            "pattern": "ngrok",
+            "description": "Ngrok内网穿透工具",
+            "severity": "medium",
+            "tags": ["内网穿透", "Ngrok"]
+        },
+        {
+            "name": "NPS",
+            "pattern": "npc\\.exe",
+            "description": "NPS客户端",
+            "severity": "medium",
+            "tags": ["内网穿透", "NPS"]
+        },
+        {
+            "name": "Nat123",
+            "pattern": "nat123",
+            "description": "Nat123内网穿透",
+            "severity": "medium",
+            "tags": ["内网穿透", "Nat123"]
+        }
+    ],
+    "ransomware": [
+        {
+            "name": "WannaCry",
+            "suffix": ".wncry",
+            "description": "WannaCry勒索病毒",
+            "severity": "critical",
+            "tags": ["勒索", "WannaCry", "永恒之蓝"]
+        },
+        {
+            "name": "Locky",
+            "suffix": ".locky",
+            "description": "Locky勒索病毒",
+            "severity": "critical",
+            "tags": ["勒索", "Locky"]
+        },
+        {
+            "name": "GlobeImposter",
+            "suffix": ".encrypted",
+            "description": "GlobeImposter勒索病毒",
+            "severity": "critical",
+            "tags": ["勒索", "GlobeImposter"]
+        },
+        {
+            "name": "TeslaCrypt",
+            "suffix": ".ecc",
+            "description": "TeslaCrypt勒索病毒",
+            "severity": "critical",
+            "tags": ["勒索", "TeslaCrypt"]
+        },
+        {
+            "name": "Ryuk",
+            "suffix": ".RYK",
+            "description": "Ryuk勒索病毒",
+            "severity": "critical",
+            "tags": ["勒索", "Ryuk"]
+        },
+        {
+            "name": "勒索提示文件",
+            "suffix": "README.txt",
+            "description": "勒索病毒提示文件",
+            "severity": "high",
+            "tags": ["勒索", "提示文件"]
+        },
+        {
+            "name": "勒索提示文件2",
+            "suffix": "HOW_TO_DECRYPT.txt",
+            "description": "勒索病毒解密提示",
+            "severity": "high",
+            "tags": ["勒索", "提示文件"]
+        }
+    ],
+    "malicious_process": [
+        {
+            "name": "xmrig",
+            "pattern": "xmrig",
+            "description": "XMRig挖矿木马",
+            "severity": "high",
+            "tags": ["挖矿", "xmrig"]
+        },
+        {
+            "name": "cnrig",
+            "pattern": "cnrig",
+            "description": "CNRig挖矿木马",
+            "severity": "high",
+            "tags": ["挖矿", "cnrig"]
+        },
+        {
+            "name": "mimikatz",
+            "pattern": "mimikatz",
+            "description": "Mimikatz凭证窃取工具",
+            "severity": "critical",
+            "tags": ["凭证", "mimikatz", "提权"]
+        },
+        {
+            "name": "lazagne",
+            "pattern": "LaZagne",
+            "description": "LaZagne密码窃取工具",
+            "severity": "critical",
+            "tags": ["凭证", "LaZagne"]
+        },
+        {
+            "name": "procdump",
+            "pattern": "procdump",
+            "description": "ProcDump凭证转储工具",
+            "severity": "medium",
+            "tags": ["凭证", "procdump"]
+        },
+        {
+            "name": "psexec",
+            "pattern": "psexec",
+            "description": "PsExec远程执行工具",
+            "severity": "medium",
+            "tags": ["远程", "psexec"]
+        }
+    ],
+    "priv_escalation": [
+        {
+            "name": "GodPotato",
+            "pattern": "GodPotato",
+            "description": "GodPotato提权工具",
+            "severity": "critical",
+            "tags": ["提权", "GodPotato"]
+        },
+        {
+            "name": "JuicyPotato",
+            "pattern": "JuicyPotato",
+            "description": "JuicyPotato提权工具",
+            "severity": "critical",
+            "tags": ["提权", "JuicyPotato"]
+        },
+        {
+            "name": "PrintSpoofer",
+            "pattern": "PrintSpoofer",
+            "description": "PrintSpoofer提权工具",
+            "severity": "critical",
+            "tags": ["提权", "PrintSpoofer"]
+        },
+        {
+            "name": "SweetPotato",
+            "pattern": "SweetPotato",
+            "description": "SweetPotato提权工具",
+            "severity": "critical",
+            "tags": ["提权", "SweetPotato"]
+        },
+        {
+            "name": "CobaltStrike",
+            "pattern": "beacon\\.exe",
+            "description": "CobaltStrike后门",
+            "severity": "critical",
+            "tags": ["后门", "CobaltStrike", "beacon"]
+        },
+        {
+            "name": "Metasploit",
+            "pattern": "meterpreter",
+            "description": "Metasploit Meterpreter",
+            "severity": "critical",
+            "tags": ["后门", "Metasploit"]
+        }
+    ]
+}
