@@ -37,6 +37,8 @@ set(SOURCES
     src/ReportGenerator.cpp
     src/LocalizationManager.cpp
     src/ThemeManager.cpp
+    src/SecurityUtils.cpp
+    src/PerformanceOptimizer.cpp
 )
 
 # 头文件列表
@@ -58,6 +60,8 @@ set(HEADERS
     include/ReportGenerator.h
     include/LocalizationManager.h
     include/ThemeManager.h
+    include/SecurityUtils.h
+    include/PerformanceOptimizer.h
 )
 
 # 窗口部件文件
