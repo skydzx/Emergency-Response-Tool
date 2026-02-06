@@ -30,6 +30,7 @@ set(SOURCES
     src/FileAnalyzer.cpp
     src/LogAnalyzer.cpp
     src/WebShellDetector.cpp
+    src/ThreatDictionary.cpp
     src/DatabaseSchemaValidator.cpp
 )
 
@@ -45,6 +46,7 @@ set(HEADERS
     include/FileAnalyzer.h
     include/LogAnalyzer.h
     include/WebShellDetector.h
+    include/ThreatDictionary.h
     include/DatabaseSchemaValidator.h
 )
 
