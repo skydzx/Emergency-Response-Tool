@@ -1,7 +1,8 @@
+-- ============================================
 -- Emergency Response Tool Database Schema
 -- SQLite Database Initialization Script
 -- Version: 1.0.0
--- Date: 2024
+-- ============================================
 
 -- ============================================
 -- 1. 扫描会话表
@@ -16,7 +17,6 @@ CREATE TABLE IF NOT EXISTS scan_sessions (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- 创建索引
 CREATE INDEX IF NOT EXISTS idx_sessions_status ON scan_sessions(status);
 CREATE INDEX IF NOT EXISTS idx_sessions_time ON scan_sessions(start_time);
 
