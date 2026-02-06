@@ -26,6 +26,7 @@ set(SOURCES
     src/SystemInfoTab.cpp
     src/ProcessDetector.cpp
     src/NetworkDetector.cpp
+    src/StartupDetector.cpp
     src/DatabaseSchemaValidator.cpp
 )
 
@@ -37,6 +38,7 @@ set(HEADERS
     include/SystemInfoTab.h
     include/ProcessDetector.h
     include/NetworkDetector.h
+    include/StartupDetector.h
     include/DatabaseSchemaValidator.h
 )
 
