@@ -23,6 +23,7 @@ set(SOURCES
     src/MainWindow.cpp
     src/DatabaseManager.cpp
     src/SystemInfoCollector.cpp
+    src/SystemInfoTab.cpp
     src/DatabaseSchemaValidator.cpp
 )
 
@@ -31,6 +32,7 @@ set(HEADERS
     include/MainWindow.h
     include/DatabaseManager.h
     include/SystemInfoCollector.h
+    include/SystemInfoTab.h
     include/DatabaseSchemaValidator.h
 )
 

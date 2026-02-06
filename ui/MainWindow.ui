@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>应急响应工具 v1.0.0</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="systemInfoTab">
+       <attribute name="toolTip">
+        <string>系统信息收集</string>
+       </attribute>
+       <attribute name="whatsThis">
+        <string>系统基本信息收集模块</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QGroupBox" name="groupBoxSystem">
+          <property name="title">
+           <string>系统基本信息</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelOS">
+             <property name="text">
+              <string>操作系统:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEditOS"/>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="labelComputerName">
+             <property name="text">
+              <string>计算机名:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLineEdit" name="lineEditComputerName"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelUser">
+             <property name="text">
+              <string>当前用户:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEditUser"/>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="labelArchitecture">
+             <property name="text">
+              <string>系统架构:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLineEdit" name="lineEditArchitecture"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="labelCPU">
+             <property name="text">
+              <string>处理器:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEditCPU"/>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="labelMemory">
+             <property name="text">
+              <string>内存:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLineEdit" name="lineEditMemory"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxHardware">
+          <property name="title">
+           <string>硬件信息</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QTableWidget" name="tableWidgetDisk">
+             <property name="columnCount">
+              <number>3</number>
+             </property>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>盘符</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>类型</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>容量信息</string>
+               </property>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxUsers">
+          <property name="title">
+           <string>用户账户</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QTableWidget" name="tableWidgetUsers">
+             <property name="columnCount">
+              <number>4</number>
+             </property>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>用户名</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>全名</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>状态</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>最后登录</string>
+               </property>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxServices">
+          <property name="title">
+           <string>服务列表</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QTableWidget" name="tableWidgetServices">
+             <property name="columnCount">
+              <number>5</number>
+             </property>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>名称</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>显示名称</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>状态</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>启动类型</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>路径</string>
+               </property>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="threatTab">
+       <attribute name="toolTip">
+        <string>威胁检测</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QGroupBox" name="groupBoxScan">
+          <property name="title">
+           <string>威胁扫描</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QPushButton" name="btnStartScan">
+             <property name="text">
+              <string>开始扫描</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnStopScan">
+             <property name="text">
+              <string>停止扫描</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBarScan">
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelScanStatus">
+             <property name="text">
+              <string>就绪</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxResults">
+          <property name="title">
+           <string>扫描结果</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QTableWidget" name="tableWidgetThreats">
+             <property name="columnCount">
+              <number>6</number>
+             </property>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>类型</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>名称</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>描述</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>严重程度</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>位置</string>
+               </property>
+              </property>
+             </column>
+             <column>
+              <property name="horizontalHeaderItem">
+               <property name="text">
+                <string>处理状态</string>
+               </property>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="logTab">
+       <attribute name="toolTip">
+        <string>日志分析</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <item>
+         <widget class="QGroupBox" name="groupBoxLogSettings">
+          <property name="title">
+           <string>日志设置</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QComboBox" name="comboBoxLogType">
+             <property name="currentText">
+              <string>Windows事件日志</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Windows事件日志</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>IIS日志</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>系统日志</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>安全日志</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateTimeEdit" name="dateTimeStart">
+             <property name="dateTime">
+              <datetime>
+               <year>2024</year>
+               <month>1</month>
+               <day>1</day>
+               <hour>0</hour>
+               <minute>0</minute>
+               <second>0</second>
+              </datetime>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel">
+             <property name="text">
+              <string>至</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateTimeEdit" name="dateTimeEnd">
+             <property name="dateTime">
+              <datetime>
+               <year>2024</year>
+               <month>12</month>
+               <day>31</day>
+               <hour>23</hour>
+               <minute>59</minute>
+               <second>59</second>
+              </datetime>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditKeyword">
+             <property name="placeholderText">
+              <string>关键字搜索...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnAnalyzeLog">
+             <property name="text">
+              <string>分析日志</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidgetLogs">
+          <property name="columnCount">
+           <number>6</number>
+          </property>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>时间</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>来源</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>事件ID</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>级别</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>描述</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>异常</string>
+            </property>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="networkTab">
+       <attribute name="toolTip">
+        <string>网络分析</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <widget class="QGroupBox" name="groupBoxNetworkScan">
+          <property name="title">
+           <string>网络监控</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QPushButton" name="btnRefreshNetwork">
+             <property name="text">
+              <string>刷新网络连接</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnPortScan">
+             <property name="text">
+              <string>端口扫描</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelConnectionCount">
+             <property name="text">
+              <string>连接数: 0</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelSuspiciousCount">
+             <property name="text">
+              <string>可疑连接: 0</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidgetNetwork">
+          <property name="columnCount">
+           <number>7</number>
+          </property>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>协议</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>本地地址</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>远程地址</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>状态</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>PID</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>进程名</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>可疑</string>
+            </property>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="fileTab">
+       <attribute name="toolTip">
+        <string>文件分析</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <item>
+         <widget class="QGroupBox" name="groupBoxFileScan">
+          <property name="title">
+           <string>文件扫描</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QPushButton" name="btnSelectDir">
+             <property name="text">
+              <string>选择目录</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditScanPath">
+             <property name="placeholderText">
+              <string>请选择要扫描的目录...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnStartFileScan">
+             <property name="text">
+              <string>开始扫描</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBarFile">
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidgetFiles">
+          <property name="columnCount">
+           <number>6</number>
+          </property>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>名称</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>路径</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>大小</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>修改时间</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>哈希</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>可疑</string>
+            </property>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="forensicsTab">
+       <attribute name="toolTip">
+        <string>电子取证</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_11">
+        <item>
+         <widget class="QGroupBox" name="groupBoxForensics">
+          <property name="title">
+           <string>取证工具</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QPushButton" name="btnMemoryDump">
+             <property name="text">
+              <string>内存镜像</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="btnRegistryExport">
+             <property name="text">
+              <string>注册表导出</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="btnProcessDump">
+             <property name="text">
+              <string>进程转储</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="btnTimelineAnalysis">
+             <property name="text">
+              <string>时间线分析</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="btnBrowserHistory">
+             <property name="text">
+              <string>浏览器历史</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="btnUSBHistory">
+             <property name="text">
+              <string>USB历史</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEditForensics">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="webshellTab">
+       <attribute name="toolTip">
+        <string>WebShell检测</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_12">
+        <item>
+         <widget class="QGroupBox" name="groupBoxWebShellScan">
+          <property name="title">
+           <string>WebShell扫描</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QComboBox" name="comboBoxTool">
+             <property name="currentText">
+              <string>D盾WebShellKill</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>D盾WebShellKill</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>河马查杀</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>自定义规则</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnSelectWebDir">
+             <property name="text">
+              <string>选择Web目录</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEditWebDir">
+             <property name="placeholderText">
+              <string>请选择Web根目录...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnStartWebShellScan">
+             <property name="text">
+              <string>开始扫描</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBarWebShell">
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidgetWebShell">
+          <property name="columnCount">
+           <number>6</number>
+          </property>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>文件路径</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>威胁类型</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>严重程度</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>检测工具</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>匹配特征</string>
+            </property>
+           </property>
+          </column>
+          <column>
+           <property name="horizontalHeaderItem">
+            <property name="text">
+             <string>操作</string>
+            </property>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="toolsTab">
+       <attribute name="toolTip">
+        <string>第三方工具</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_13">
+        <item>
+         <widget class="QGroupBox" name="groupBoxTools">
+          <property name="title">
+           <string>第三方工具管理</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayoutTools">
+           <item row="0" column="0">
+            <widget class="QPushButton" name="btnToolProcessExp">
+             <property name="text">
+              <string>Process Explorer</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="btnToolAutoruns">
+             <property name="text">
+              <string>AutoRuns</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="btnToolPCHunter">
+             <property name="text">
+              <string>PCHunter</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="btnToolWireshark">
+             <property name="text">
+              <string>Wireshark</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="btnToolNmap">
+             <property name="text">
+              <string>Nmap</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QPushButton" name="btnToolVolatility">
+             <property name="text">
+              <string>Volatility</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="reportTab">
+       <attribute name="toolTip">
+        <string>报告生成</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_14">
+        <item>
+         <widget class="QGroupBox" name="groupBoxReport">
+          <property name="title">
+           <string>报告生成</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QPushButton" name="btnGeneratePDF">
+             <property name="text">
+              <string>生成PDF报告</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGenerateHTML">
+             <property name="text">
+              <string>生成HTML报告</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnExportData">
+             <property name="text">
+              <string>导出数据</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEditReport">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1400</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
