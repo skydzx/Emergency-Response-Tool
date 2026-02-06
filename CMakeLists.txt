@@ -28,6 +28,7 @@ set(SOURCES
     src/NetworkDetector.cpp
     src/StartupDetector.cpp
     src/FileAnalyzer.cpp
+    src/LogAnalyzer.cpp
     src/DatabaseSchemaValidator.cpp
 )
 
@@ -41,6 +42,7 @@ set(HEADERS
     include/NetworkDetector.h
     include/StartupDetector.h
     include/FileAnalyzer.h
+    include/LogAnalyzer.h
     include/DatabaseSchemaValidator.h
 )
 
