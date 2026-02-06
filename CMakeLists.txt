@@ -27,6 +27,7 @@ set(SOURCES
     src/ProcessDetector.cpp
     src/NetworkDetector.cpp
     src/StartupDetector.cpp
+    src/FileAnalyzer.cpp
     src/DatabaseSchemaValidator.cpp
 )
 
@@ -39,6 +40,7 @@ set(HEADERS
     include/ProcessDetector.h
     include/NetworkDetector.h
     include/StartupDetector.h
+    include/FileAnalyzer.h
     include/DatabaseSchemaValidator.h
 )
 
