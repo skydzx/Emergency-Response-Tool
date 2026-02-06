@@ -33,6 +33,7 @@ set(SOURCES
     src/ThreatDictionary.cpp
     src/ThirdPartyToolsManager.cpp
     src/DatabaseSchemaValidator.cpp
+    src/ForensicsManager.cpp
 )
 
 # 头文件列表
@@ -50,6 +51,7 @@ set(HEADERS
     include/ThreatDictionary.h
     include/ThirdPartyToolsManager.h
     include/DatabaseSchemaValidator.h
+    include/ForensicsManager.h
 )
 
 # 窗口部件文件
