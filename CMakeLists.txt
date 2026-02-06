@@ -34,6 +34,7 @@ set(SOURCES
     src/ThirdPartyToolsManager.cpp
     src/DatabaseSchemaValidator.cpp
     src/ForensicsManager.cpp
+    src/ReportGenerator.cpp
 )
 
 # 头文件列表
@@ -52,6 +53,7 @@ set(HEADERS
     include/ThirdPartyToolsManager.h
     include/DatabaseSchemaValidator.h
     include/ForensicsManager.h
+    include/ReportGenerator.h
 )
 
 # 窗口部件文件
