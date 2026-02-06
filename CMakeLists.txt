@@ -24,6 +24,8 @@ set(SOURCES
     src/DatabaseManager.cpp
     src/SystemInfoCollector.cpp
     src/SystemInfoTab.cpp
+    src/ProcessDetector.cpp
+    src/NetworkDetector.cpp
     src/DatabaseSchemaValidator.cpp
 )
 
@@ -33,6 +35,8 @@ set(HEADERS
     include/DatabaseManager.h
     include/SystemInfoCollector.h
     include/SystemInfoTab.h
+    include/ProcessDetector.h
+    include/NetworkDetector.h
     include/DatabaseSchemaValidator.h
 )
 
