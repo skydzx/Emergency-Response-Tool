@@ -133,3 +133,76 @@ file(COPY sql DESTINATION ${CMAKE_BINARY_DIR}/sql)
 
 # 复制翻译目录
 file(COPY translations DESTINATION ${CMAKE_BINARY_DIR}/translations)
+
+# ============================================
+# CPack配置 - 安装包制作
+# ============================================
+
+# 包信息
+set(CPACK_PACKAGE_NAME "EmergencyResponseTool")
+set(CPACK_PACKAGE_VENDOR "Security Team")
+set(CPACK_PACKAGE_VERSION_MAJOR 1)
+set(CPACK_PACKAGE_VERSION_MINOR 0)
+set(CPACK_PACKAGE_VERSION_PATCH 0)
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY
+    "Windows应急响应工具 - 安全分析与事件响应平台")
+
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE")
+set(CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/README.md")
+set(CPACK_PACKAGE_EXECUTABLES "EmergencyResponseTool" "Emergency Response Tool")
+
+# Windows特定配置 (NSIS安装包)
+if(WIN32)
+    # 查找NSIS
+    find_package(NSIS)
+
+    if(NSIS_FOUND)
+        set(CPACK_GENERATOR "NSIS")
+        set(CPACK_NSIS_EXECUTABLE "${NSIS_NSISEXECUTABLE}")
+        set(CPACK_NSIS_PACKAGE_NAME "应急响应工具")
+        set(CPACK_NSIS_DISPLAY_NAME "应急响应工具 v1.0.0")
+        set(CPACK_NSIS_HELP_LINK "https://github.com/skydzx/Emergency-Response-Tool")
+        set(CPACK_NSIS_URL_INFO_ABOUT "https://github.com/skydzx/Emergency-Response-Tool")
+        set(CPACK_NSIS_CONTACT "support@example.com")
+        set(CPACK_NSIS_MODIFY_PATH ON)
+        set(CPACK_NSIS_ENABLE_UNINSTALL_BY_GUI ON)
+
+        # 开始菜单快捷方式
+        set(CPACK_NSIS_MENU_LINKS
+            "bin/EmergencyResponseTool.exe" "应急响应工具"
+            "doc/README.md" "使用文档"
+        )
+
+        # 安装后配置脚本
+        set(CPACK_NSIS_POST_INSTALL_SCRIPT "${CMAKE_SOURCE_DIR}/cmake/post_install.nsi.in")
+    else()
+        set(CPACK_GENERATOR "ZIP")
+    endif()
+
+    # Visual C++ Redistributable提示
+    set(CPACK_WIX_PROPERTIES "WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED=$(var.WIX_IS_NETFRAMEWORK_46_OR_LATER_INSTALLED)")
+endif()
+
+# ZIP安装包 (用于所有平台)
+set(CPACK_ARCHIVE_COMPONENT_INSTALL ON)
+
+# 组件定义
+cpack_add_component_group(MainProgram
+    DESCRIPTION "主程序")
+cpack_add_component_group(Documentation
+    DESCRIPTION "文档")
+cpack_add_component_group(Runtime
+    DESCRIPTION "运行时依赖")
+
+cpack_add_component(MainFiles
+    GROUP MainProgram
+    DESTINATION bin)
+cpack_add_component(Readme
+    GROUP Documentation
+    DESTINATION doc)
+cpack_add_component(ConfigFiles
+    GROUP Runtime
+    DESTINATION config)
+
+# 包含CPack
+include(CPack)

@@ -1,0 +1,30 @@
+; Emergency Response Tool - Post Install Script
+; 此脚本在安装完成后执行
+
+!ifdef MUI_FINISHPAGE_NOAUTOCLOSE
+
+; 创建程序组快捷方式
+CreateDirectory "$SMPROGRAMS\$INSTDIR_NAME"
+CreateShortCut "$SMPROGRAMS\$INSTDIR_NAME\应急响应工具.lnk" "$INSTDIR\bin\EmergencyResponseTool.exe"
+CreateShortCut "$SMPROGRAMS\$INSTDIR_NAME\卸载工具.lnk" "$INSTDIR\uninstall.exe"
+
+; 创建桌面快捷方式
+CreateShortCut "$DESKTOP\应急响应工具.lnk" "$INSTDIR\bin\EmergencyResponseTool.exe"
+
+; 初始化数据库
+DetailPrint "正在初始化数据库..."
+ExecWait '"$INSTDIR\bin\EmergencyResponseTool.exe" --init-db' $0
+
+; 检查初始化结果
+IfErrors 0 +2
+    DetailPrint "数据库初始化失败，请手动初始化"
+
+; 复制示例配置文件
+IfFileExists "$INSTDIR\config\config.json.example" 0 +4
+    CopyFiles /SILENT "$INSTDIR\config\config.json.example" "$INSTDIR\config\config.json"
+    DetailPrint "已创建配置文件"
+
+; 提示用户
+MessageBox MB_OK "安装完成！$\n$\n建议操作：$\n1. 运行程序并更新威胁特征库$\n2. 配置扫描选项$\n3. 执行首次全盘扫描"
+
+!endif
