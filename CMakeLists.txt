@@ -35,6 +35,8 @@ set(SOURCES
     src/DatabaseSchemaValidator.cpp
     src/ForensicsManager.cpp
     src/ReportGenerator.cpp
+    src/LocalizationManager.cpp
+    src/ThemeManager.cpp
 )
 
 # 头文件列表
@@ -54,6 +56,8 @@ set(HEADERS
     include/DatabaseSchemaValidator.h
     include/ForensicsManager.h
     include/ReportGenerator.h
+    include/LocalizationManager.h
+    include/ThemeManager.h
 )
 
 # 窗口部件文件
@@ -122,3 +126,6 @@ file(COPY dictionaries DESTINATION ${CMAKE_BINARY_DIR}/dictionaries)
 
 # 复制SQL目录
 file(COPY sql DESTINATION ${CMAKE_BINARY_DIR}/sql)
+
+# 复制翻译目录
+file(COPY translations DESTINATION ${CMAKE_BINARY_DIR}/translations)
