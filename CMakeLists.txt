@@ -29,6 +29,7 @@ set(SOURCES
     src/StartupDetector.cpp
     src/FileAnalyzer.cpp
     src/LogAnalyzer.cpp
+    src/WebShellDetector.cpp
     src/DatabaseSchemaValidator.cpp
 )
 
@@ -43,6 +44,7 @@ set(HEADERS
     include/StartupDetector.h
     include/FileAnalyzer.h
     include/LogAnalyzer.h
+    include/WebShellDetector.h
     include/DatabaseSchemaValidator.h
 )
 
